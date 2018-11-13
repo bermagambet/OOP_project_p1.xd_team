@@ -1,1 +1,2 @@
-# OOP_project_p1.xd_team
+# Part 1
+Making CLASSES, FIELDS, METHODS.
