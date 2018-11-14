@@ -23,7 +23,7 @@ public class Manager extends User {
         String s1 = sc.nextLine();
         this.password = s1;
     }
-    public void openCourse(Course course, boolean bol, int year, String specaility,){
+    public void openCourse(Course course, boolean bol, int year, String specaility){
         course.setAccesability(bol, year, specaility);
     }
     public void viewInfo(){

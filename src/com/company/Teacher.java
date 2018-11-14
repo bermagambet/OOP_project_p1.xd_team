@@ -27,7 +27,7 @@ public class Teacher extends User{
         this.password = s1;
     }
 
-    public String receiveMessage(){
+    public void receiveMessage(){
         this.messages.add(super.getMessage());
     }
 

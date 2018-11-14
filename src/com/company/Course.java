@@ -32,7 +32,7 @@ public class Course{
         return this.courseFiles;
     }
     public ArrayList<Mark> getMarks(){
-        return this.marks:
+        return this.marks;
     }
     public ArrayList<Teacher> getTeachers(){
         return this.teachers;
@@ -61,7 +61,7 @@ public class Course{
     public void setMarks(ArrayList<Mark> marks){
         this.marks = marks;
     }
-    public void seteStudents(ArrayList<Teacher> teachers){
+    public void setStudents(ArrayList<Teacher> teachers){
         this.teachers = teachers;
     }
     public void addStudent(Student student){

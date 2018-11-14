@@ -7,8 +7,8 @@ public class Student extends User{
     private String username;
     private String password;
     private String name;
-    private String year;
-    private String mark = "";
+    private int year;
+    private double mark;
     private String speciality;
     private ArrayList<Course> courses;
     public Student(String name, String speciality){
@@ -34,6 +34,15 @@ public class Student extends User{
 
     public String getStudentName(){
         return this.name;
+    }
+    public int getYear(){
+        return this.year;
+    }
+    public double getMark(){
+        return this.mark;
+    }
+    public String getSpeciality(){
+        return this.speciality;
     }
 
     public void viewTeacher(){
@@ -74,11 +83,13 @@ public class Student extends User{
         }
     }
     public void calcMark(){
+        int sch = 0;
         for(int i = 0; i < courses.size(); i++){
             System.out.println(courses.get(i).getCourseTitle());
             for(int j = 0; j < courses.get(i).getMarks().size();j++){
                 if (courses.get(i).getMarks().get(j).getStudentName().equals(this.name)){
-                    this.mark += courses.get(i).getMarks().get(j).getKeyValue() + ", ";
+                    sch++;
+                    this.mark = (mark + Integer.parseInt(courses.get(i).getMarks().get(j).getMarks().get(j).getKeyValue())) / sch;
                 }
             }
         }
@@ -91,7 +102,7 @@ public class Student extends User{
     public boolean equals(Object obj){
         if (obj instanceof Student){
             Student st = (Student) obj;
-            if(this.name.equals(st.name) && this.year.equals(st.year)){
+            if(this.name.equals(st.name) && this.year == st.year){
                 return true;
             }
             else return false;
