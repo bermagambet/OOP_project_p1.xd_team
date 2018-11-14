@@ -27,6 +27,8 @@ public class Admin extends User {
         this.password = s1;
     }
 
+
+
     @Override
     public void register(){
         Scanner sc = new Scanner(System.in);
@@ -42,16 +44,18 @@ public class Admin extends User {
             users.add(uss);
 
     }
-    public void deleteUser(User user){
+    public void deleteUser( Object user){
         if (this.users.contains(user)){
             this.users.remove(user);
         }
     }
     public void updateUser(User user){
         //coming soon
+        //Piazza documentation doesn't give any info about the body of this method
     }
     public void checkLogs(){
         //coming soon
+        //requires test class for providing the streams
     }
     @Override
     public String toString(){

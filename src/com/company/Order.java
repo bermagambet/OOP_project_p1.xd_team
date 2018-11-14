@@ -20,7 +20,13 @@ public class Order {
     public boolean getAccepted(){
         return this.acceptedOrder;
     }
+    public void setOrderText(String orderText) {
+        this.orderText = orderText;
+    }
 
+    public String getOrderText(){
+        return this.orderText;
+    }
 
     public Order(String orderText){
         this.orderText = orderText;
@@ -28,26 +34,26 @@ public class Order {
     @Override
     public String toString(){
         String s = "";
-        if ( this.acceptedOrder == true ) {
+        if ( this.acceptedOrder ) {
             s += "Accepted";
         }
-        else if ( this.acceptedOrder != true){
+        else if ( !this.acceptedOrder){
             s += "Declined";
         }
         String s1 = "";
-        if ( this.newOrder == true ){
+        if ( this.newOrder){
             s1 += "Checked";
         }
         else
-        if ( this.newOrder != true ){
+        if ( !this.newOrder ){
             s1 += "Not Checked";
         }
         String s2 = "";
-        if ( this.orderDone == true ){
+        if ( this.orderDone ){
             s2 += "Done";
         }
         else
-        if ( this.orderDone != true ){
+        if ( !this.orderDone ){
             s2 += "Not Done";
         }
         return "The order: " + this.orderText + " is " + s + ", " + s1 + " and it's " + s2;

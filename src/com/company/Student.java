@@ -45,6 +45,25 @@ public class Student extends User{
         return this.speciality;
     }
 
+    public void setStudentName(String name){
+        this.name = name;
+        Scanner sc = new Scanner(System.in);
+        String[] f_s_name = name.split(" ");
+        this.username = f_s_name[0] + "_" + f_s_name[1].substring(0, 1);
+        System.out.println("Please, enter your new password:");
+        String s1 = sc.nextLine();
+        this.password = s1;
+    }
+    public void setYear(int year){
+    this.year = year;
+    }
+    public void setMark(double mark){
+    this.mark = mark;
+    }
+    public void setSpeciality(String speciality){
+        this.speciality = speciality;
+    }
+
     public void viewTeacher(){
         System.out.println("Type the title of the course: ");
         Scanner sc = new Scanner(System.in);
