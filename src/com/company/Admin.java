@@ -1,35 +1,51 @@
 package com.company;
 
-import javafx.util.Pair;
-
 import java.util.ArrayList;
-import java.util.Map;
+import java.util.Scanner;
 
-public class Admin {
-    private Map<String, String> loginPassword;
+public class Admin extends User {
+    private ArrayList<User> users;
+    private String username;
+    private String password;
     private String name;
-    public void addUser(String username, String password){
-        loginPassword.put(username, password);
-    }
-    public void removeUser(String username){
-        if(loginPassword.containsKey(username)){
-            loginPassword.remove(username);
-        }
-        else
-            System.out.println("User hasn't found");
-    }
-    public String getLogs(String s){
 
+    @Override
+    public void register(){
+        Scanner sc = new Scanner(System.in);
+        String[] f_s_name = name.split(" ");
+        this.username = f_s_name[0] + "_" + f_s_name[1].substring(0, 1);
+        System.out.println("Please, enter your password:");
+        String s1 = sc.nextLine();
+        this.password = s1;
+    }
+    public void addUser(Object user){
+            User uss = (User)user;
+            uss.register();
+            users.add(uss);
+
+    }
+    public void deleteUser(User user){
+        if (this.users.contains(user)){
+            this.users.remove(user);
+        }
+    }
+    public void updateUser(User user){
+        //coming soon
+    }
+    public void checkLogs(){
+        //coming soon
+    }
+    @Override
+    public String toString(){
+        return "Admin's name: " + this.name;
     }
     @Override
     public boolean equals(Object obj){
         if(obj instanceof Admin){
-            Admin ad = (Admin)obj;
-            if (ad.loginPassword.equals(this.loginPassword)){
+            if(this.name.equals(((Admin)obj).name)){
                 return true;
             }
-            else
-                return false;
+            else return false;
         }
         else return false;
     }
