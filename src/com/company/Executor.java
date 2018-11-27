@@ -6,7 +6,7 @@ public class Executor extends User {
     private String username;
     private String password;
     private String name;
-    static ArrayList<Order> orders;
+    private ArrayList<Order> orders;
     public Executor(String name){
         this.name = name;
     }
